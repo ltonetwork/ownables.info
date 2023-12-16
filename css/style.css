@@ -29,6 +29,11 @@ iframe {
   max-width: 100%;
 }
 
+video {
+  width:"960"; 
+  height:"671";
+}
+
 .logo {
   width: 394px;
 }
@@ -245,6 +250,11 @@ h1 span {
   .header {
     padding: 32px 50px;
   }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 1180px) {
@@ -276,6 +286,11 @@ h1 span {
 
   h1 + .button {
     margin: 0 auto;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
   }
 
   .sdk-section {
@@ -320,6 +335,11 @@ h1 span {
 
   h1 {
     font-size: 48px;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
   }
 
   .main h2 {
@@ -371,6 +391,11 @@ h1 span {
 
   h1 {
     font-size: 38px;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
   }
 
   .modal-wrap {
