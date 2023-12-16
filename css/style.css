@@ -313,9 +313,24 @@ h1 span {
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
   .header__actions span {
     display: none;
+  }
+
+  .tokenomics-section {
+    font-size: 14px;
+    margin: 20px;
+ }
+
+  .how-it-works-text {
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
   }
 }
 
