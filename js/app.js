@@ -28,3 +28,34 @@ document.addEventListener('click', function (event) {
 	}
 
 }, false);
+
+navigator.saysWho = (() => {
+	const { userAgent } = navigator;
+	let match = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+	
+	if (/trident/i.test(match[1])) {
+	  return 'IE';
+	}
+	
+	if (match[1] === 'Chrome') {
+	  let temp = userAgent.match(/\b(OPR|Edge|Edg)\/(\d+)/);
+	
+	  if (temp !== null) {
+		return temp[0].replace('OPR', 'Opera').replace('Edg', 'Edge');
+	  }
+	}
+	
+	return match[1];
+  })();
+  
+  const webmSource = document.getElementById("webmSource");
+  const mp4Source = document.getElementById("mp4Source");
+  
+// checking navigator.saysWho for Safari, webm does not work proper on safari, so change to mp4
+  if (navigator.saysWho.includes("Safari")) {
+	mp4Source.style.display = "block";
+	webmSource.remove()
+  } else {
+	webmSource.style.display = "block";
+	mp4Source.remove()
+  }

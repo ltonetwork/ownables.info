@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport"="width"="devicewidth", initial-=1.0>
   <title></title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:title" content="">
   <meta property="og:type" content="">
@@ -55,10 +55,12 @@
         <a href="https://demo.ownables.info/" class="button">Try Demo</a>
       </div>
       <div class="sdk-section__video">
-       <video width="960" height="671" loop autoplay muted playsinline>
-        <source src="/img/RWAS.webm" type=video/webm>
-         <source src="/img/WALLET_ANIM_RWAs.mp4" type=video/mp4>
-      </video>
+        <video id="webmSource" class="responsive-video" width=100% height="auto" loop autoplay muted playsinline id="myVideo">
+          <source src="img/RWAS.webm" type=video/webm >
+        </video>
+        <video id="mp4Source" class="responsive-video" width=100% height="auto" loop autoplay muted playsinline id="myVideo">
+         <source id="mp4Source" src="img/WALLET_ANIM_RWAs.mp4" type=video/mp4 >
+        </video>
       </div>
 </div>
   
