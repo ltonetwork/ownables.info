@@ -26,9 +26,11 @@
 <body>
   <header class="header">
     <div class="header__logo">
-      <img src="/img/ownables-logo.png" alt="Ownables Logo" class="logo">
+      <img onclick="openDialog()" src="/img/ownables-logo.png" alt="Ownables Logo" class="logo">
     </div>
     <div class="header__actions">
+<!-- <button  onclick="openDialog()">Open Dialog</button> -->
+      
       <a href="https://discord.gg/JGHzqr334F"><span>Join Discord</span></a>
       <div class="header__actions__social">
         <a href="https://discord.gg/JGHzqr334F" target="_blank" rel="nofollow"><img src="/img/discord.svg" alt="Discord Logo"></a>
@@ -40,12 +42,60 @@
 
   <main class="main">
 
+    <dialog max-width="80%" id="dialog">
+      <button class="close-button" onclick="openDialog()">X</button>
+      
+      <!-- <div id="dialog" style="display: none;"> -->
+        <div class="flex items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+          <div class="container mx-auto">
+            <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+              <div class="text-center">
+                <h1 class="my-3 text-3xl font-semibold text-black dark:text-gray-200">
+                  Contact Us
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400">
+                  Fill up the form below to send us a message.
+                </p>
+              </div>
+              <div class="m-7">
+                <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                  <input type="hidden" name="access_key" value="06560c56-4fa0-446d-a9e1-762f64dfac2b" />
+                  <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+                  <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                  <input type="checkbox" name="botcheck" id="" style="display: none;" />
+                  <div class="mb-6">
+                    <label for="name" class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Full Name</label>
+                    <input type="text" name="name" id="name" placeholder="John Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                  </div>
+                  <div class="mb-6">
+                    <label for="email" class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="you@company.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                  </div>
+                  <div class="mb-6">
+                    <label for="message" class="block mb-2 font-medium text-sm text-gray-600 dark:text-gray-400">Your Message</label>
+        
+                    <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-400 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+                  </div>
+                  <div class="h-captcha" data-sitekey="454fa1de-0ee2-419c-a133-8c187ad18d1a" data-callback="enableButton"></div>
+                  <div class="mb-6">
+                    <button id="submit-button" type="submit" class="w-full px-3 py-4 text-white bg-indigo-700 rounded-md focus:bg-indigo-600 focus:outline-none" disabled>
+                      Send Message
+                    </button>
+                  </div>
+                
+                  <p class="text-base text-center text-gray-400" id="result"></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
     
  <!--    <h1>Ownables are <br>the ultimate <span>DIGITAL ASSET</span></h1>
     <a href="https://demo.ownables.info/" class="button">Try Demo</a>
 <div><p>
 </p></div> -->
-    
 
 <div class="sdk-section">
       <div class="sdk-section__text"> 
@@ -55,7 +105,7 @@
         <a href="https://nftparis.ownables.info/" class="button">Try Demo</a>
       </div>
       <div class="sdk-section__video">
-        <video id="webmSource" class="responsive-video" width=100% height="auto" loop autoplay muted playsinline id="myVideo">
+        <video id="webmSource" class="responsive-video" width=150% height="auto" loop autoplay muted playsinline id="myVideo">
           <source src="img/RWAS.webm" type=video/webm >
         </video>
         <video id="mp4Source" class="responsive-video" width=100% height="auto" loop autoplay muted playsinline id="myVideo">
@@ -155,6 +205,8 @@
 
   <script src="js/vendor/modernizr-3.12.0.min.js"></script>
   <script src="js/app.js"></script>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script src="https://hcaptcha.com/1/api.js" async defer></script>
 
 </body>
 
