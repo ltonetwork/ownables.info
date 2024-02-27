@@ -48,35 +48,38 @@ navigator.saysWho = (() => {
 	return match[1];
   })();
   
-  const webmSource = document.getElementById("webmSource");
-  const mp4Source = document.getElementById("mp4Source");
+//   const webmSource = document.getElementById("webmSource");
+//   const mp4Source = document.getElementById("mp4Source");
   
-// checking navigator.saysWho for Safari, webm does not work proper on safari, so change to mp4
-  if (navigator.saysWho.includes("Safari")) {
-	mp4Source.style.display = "block";
-	webmSource.remove()
-  } else {
-	webmSource.style.display = "block";
-	mp4Source.remove()
-  }
+// // checking navigator.saysWho for Safari, webm does not work proper on safari, so change to mp4
+//   if (navigator.saysWho.includes("Safari")) {
+// 	mp4Source.style.display = "block";
+// 	webmSource.remove()
+//   } else {
+// 	webmSource.style.display = "block";
+// 	mp4Source.remove()
+//   }
 
   const dialog = document.getElementById("dialog");
+  const overlay = document.getElementById("overlay");
 
   function openDialog() {
-	// var dialog = document.getElementById("dialog");
-	if (dialog.style.display === "block") {
-		dialog.style.display = "none";
-		document.body.style.overflow = 'auto';
-	} else {
-		dialog.style.display = "block";
-		document.body.style.overflow = 'hidden';
-	}
-    // document.getElementById("dialog").style.display = "block";
-  }
+	  // var dialog = document.getElementById("dialog");
+    if (dialog.style.display === "block") {
+      dialog.style.display = "none";
+      overlay.classList.remove("visible");
+      // document.body.style.overflow = 'auto';
+    } else {
+      dialog.style.display = "block";
+      overlay.classList.add("visible");
+      // document.body.style.overflow = 'hidden';
+    }
+      // document.getElementById("dialog").style.display = "block";
+    };
 
   function enableButton() {
     document.getElementById('submit-button').disabled = false;
-  }
+  };
 
   const form = document.getElementById("form");
 const result = document.getElementById("result");

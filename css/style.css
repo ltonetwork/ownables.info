@@ -33,10 +33,6 @@ dialog{
   position: relative;
 }
 
-/* video {
-  width:"960"; 
-  height:"671";
-} */
 
 .logo {
   width: 394px;
@@ -47,7 +43,7 @@ dialog{
   padding: 15px 20px;
   color: white;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   text-align: center;
   transition: 300ms;
@@ -177,23 +173,99 @@ h1 span {
 }
 
 .button2 {
-  width: 320px;
+  border: 2px solid #3EAAFE;
+  float: right;
+  max-width: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 300;
   border-radius: 12px;
-  background-color: #F06895;
+  background-color: #3EAAFE;
+  color: white;
+  padding: 0 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  display: none;
+}
+
+.overlay.visible {
+  display: block;
 }
 
 .contact {
-  display: none;
-  background: #7661FF;
+  max-width: 90%;
+  width: 90%;
+  max-width: 500px;
+  overflow: auto;
+  background: white;
   padding: 80px 50px 50px;
-  /* max-width: 1440px; */
   margin: 0 auto;
-  position: relative;
+  border-radius: 20px;
+  color: #3EAAFE;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.contact h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 0 0 20px
+}
+
+.contact input, 
+.contact textarea {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #3EAAFE;
+  border-radius: 15px;
+  font-size: 20px;
+  background-color: #edf0f3;
+}
+
+.contact input::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 20px; 
+  transform: translateY(-50%);
+}
+
+.contact textarea::placeholder {
+  position: absolute;
+  left: 20px;
+}
+
+.contact__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #3EAAFE;
+  text-decoration: none;
+  line-height: 0;
+  background-color: white;
+  box-shadow: 0 0 5px black;
+  transform: rotate(45deg);
 }
 
 .modal-wrap {
@@ -274,11 +346,6 @@ h1 span {
   .header {
     padding: 32px 50px;
   }
-
-  video {
-    width: 100%;
-    height: auto;
-  }
 }
 
 @media screen and (max-width: 1180px) {
@@ -310,11 +377,6 @@ h1 span {
 
   h1 + .button {
     margin: 0 auto;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
   }
 
   .sdk-section {
@@ -352,10 +414,6 @@ h1 span {
     word-wrap: break-word;
   }
 
-  video {
-    width: 100%;
-    height: auto;
-  }
 }
 
 @media screen and (max-width: 680px) {
@@ -374,11 +432,6 @@ h1 span {
 
   h1 {
     font-size: 48px;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
   }
 
   .main h2 {
@@ -424,6 +477,17 @@ h1 span {
 }
 
 @media screen and (max-width: 460px) {
+  .contact input, .contact textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .button2 {
+    width: 100%;
+    font-size: 20px;
+    padding: auto;
+  }
+
   .logo {
     width: 100%;
   }
@@ -432,9 +496,13 @@ h1 span {
     font-size: 38px;
   }
 
-  video {
-    width: 100%;
-    height: auto;
+  .contact h1{
+    font-size: 30px;
+  }
+
+  .contact__close {
+    top: 10px;
+    right: 10px;
   }
 
   .modal-wrap {
