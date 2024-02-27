@@ -60,13 +60,16 @@ navigator.saysWho = (() => {
 	mp4Source.remove()
   }
 
-  
+  const dialog = document.getElementById("dialog");
+
   function openDialog() {
-	var dialog = document.getElementById("dialog");
+	// var dialog = document.getElementById("dialog");
 	if (dialog.style.display === "block") {
 		dialog.style.display = "none";
+		document.body.style.overflow = 'auto';
 	} else {
 		dialog.style.display = "block";
+		document.body.style.overflow = 'hidden';
 	}
     // document.getElementById("dialog").style.display = "block";
   }
@@ -74,7 +77,7 @@ navigator.saysWho = (() => {
   function enableButton() {
     document.getElementById('submit-button').disabled = false;
   }
-  
+
   const form = document.getElementById("form");
 const result = document.getElementById("result");
 
@@ -117,6 +120,8 @@ form.addEventListener("submit", function (e) {
       form.reset();
       setTimeout(() => {
         result.style.display = "none";
-      }, 5000);
+		dialog.style.display = "none";
+		document.body.style.overflow = 'auto';
+      }, 1000);
     });
 });
