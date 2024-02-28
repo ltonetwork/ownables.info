@@ -123,8 +123,9 @@ form.addEventListener("submit", function (e) {
       form.reset();
       setTimeout(() => {
         result.style.display = "none";
-		dialog.style.display = "none";
-		document.body.style.overflow = 'auto';
+		    dialog.style.display = "none";
+        overlay.classList.remove("visible");
+		// document.body.style.overflow = 'auto';
       }, 1000);
     });
 });

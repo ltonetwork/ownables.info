@@ -229,6 +229,7 @@ h1 span {
 
 .contact input, 
 .contact textarea {
+  padding-left: 20px;
   width: 100%;
   margin: 0 auto;
   border: 1px solid #3EAAFE;
@@ -486,6 +487,7 @@ h1 span {
     width: 100%;
     font-size: 20px;
     padding: auto;
+    height: 50px;
   }
 
   .logo {
