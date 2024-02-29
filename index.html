@@ -48,7 +48,8 @@
       </h1>
       <form action="https://api.web3forms.com/submit" method="POST" id="form">
         <!-- <input type="hidden" name="access_key" value="06560c56-4fa0-446d-a9e1-762f64dfac2b" /> -->
-        <input type="hidden" name="access_key" value="f75c47da-58b9-47c7-975c-30d0f09904bd" />
+        <!-- <input type="hidden" name="access_key" value="f75c47da-58b9-47c7-975c-30d0f09904bd" /> -->
+        <input type="hidden" name="access_key" />
         <input type="hidden" name="subject" value="New Submission from Ownables.info" />
         <input type="hidden" name="redirect" value="https://web3forms.com/success" />
         <input type="checkbox" name="botcheck" id="" style="display: none;" />
@@ -180,6 +181,14 @@
   <script src="js/vendor/modernizr-3.12.0.min.js"></script>
   <script src="js/app.js"></script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var input = document.querySelector('input[name="access_key"]');
+      if (input) {
+        input.value = access_key;
+      }
+    });
+  </script>
 
 </body>
 
